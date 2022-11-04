@@ -1,0 +1,214 @@
+
+h1,h2,h3,h4,h5,p{
+	font-family: 'Alatsi', sans-serif;
+	font-weight: 400;
+}
+
+body{
+	background-color:#252424;
+}
+
+.container{
+	padding: 24px;
+	max-width: 655px; 
+	margin: 0 auto;
+	color:#ccc;
+}
+
+.title{
+	font-size: 60px;
+	text-align: center;
+	margin:0px;
+}
+
+.belt-selector-row{	
+	width: 100%;
+	max-width: 650px;
+	margin:30px auto 30px;
+	display: flex;
+	align-items:center;
+	flex-wrap: wrap;	
+	justify-content: space-around;
+	opacity: 1;
+	transition: all 0.4s ease-in-out;
+}
+
+.belt-selector-row.disabled{opacity: 0.3; }
+
+.belt-selector-row span{
+	cursor: pointer;
+	padding: 8px 16px;
+	border: 4px solid #ccc;
+	border-radius: 7px;
+	width: auto;
+	min-width: 20px;
+	height: 30px;	
+	text-align: center;
+	transition: 0.3s all ease;
+	margin:8px;	
+	background: transparent;
+}
+
+.belt-selector-row span h3{
+	font-size: 25px;
+}
+
+.belt-selector-row span h3 {margin: 0px;}
+
+.belt-selector-row span.yellow-belt{border-color: #d2d511;}
+.belt-selector-row span.orange-belt{border-color: #ac7104;}
+.belt-selector-row span.green-belt{border-color: #236423;}
+.belt-selector-row span.blue-belt{border-color: #3434ea;}
+
+.belt-selector-row span.yellow-belt.selected{background-color:#d2d511; color:#252424; border-color:#d2d511;}
+.belt-selector-row span.orange-belt.selected{background-color:#ac7104; color:#252424; border-color:#ac7104;}
+.belt-selector-row span.green-belt.selected{background-color:#236423; color:#252424; border-color:#236423;}
+.belt-selector-row span.blue-belt.selected{background-color:#3434ea; color:#ccc; border-color:#3434ea;}
+.belt-selector-row span.all-belt.selected{background-color:#ccc; color:#252424; border-color:#ccc;}
+
+
+.tecnica-text{
+	font-size: 120px;
+	text-align: center;
+	margin:0px;
+	color:#ccc;
+}
+.tecnica-text.no-nivel{
+	font-size: 30px;
+	color: #822626;
+}
+
+.action-buttons-row{
+	width: 100%;
+}
+
+.start-stop-wrap{	
+	width: 100%;
+	display: flex;
+    align-items: center;
+    justify-content: space-around;    
+    font-size: 25px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #ccc;
+}
+
+.velocity-wrap{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;  
+    align-items: center;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+.velocity-wrap.disabled{opacity: 0.3; }
+
+.velocity-wrap span{
+	margin:4px; 
+	padding: 4px; 
+	background:#ccc; 
+	border-radius: 4px; 
+	min-width: 20px;
+	color:#252424;
+	opacity: 0.4;
+	text-align: center;
+}
+.velocity-wrap span p{cursor: pointer; margin:0px; font-size: 20px;}
+
+.velocity-wrap span.vel-selected{opacity: 1; }
+
+.velocity-wrap div.text{	
+	background:transparent;
+	color:white;
+	opacity: 1;
+	margin: 0px;
+}
+.velocity-wrap span.text p{color:white;}
+
+
+.start-btn.disabled{opacity: 0.2; cursor: none; pointer-events: none;}
+
+.stop-btn{ cursor: not-allowed; opacity: 0.2;}
+
+.start-btn.enabled{cursor: pointer; color: #ccc; }
+
+.stop-btn.enabled{ cursor: pointer; opacity: 1; }  	
+
+.pause-btn{
+	margin: 0px;
+	padding: 8px;
+	cursor: pointer;
+	color:#ccc;
+	font-size: 25px;
+	opacity: 1;	
+}
+
+.pause-btn.disabled{	
+	opacity: 0.4;
+}
+
+.pause-btn.enabled{	
+	color:#a21010;
+}
+
+/*************** animations ****************/
+
+.pulse {
+  color: #3079ed;
+  animation-name: angry-animation;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+@keyframes angry-animation {
+  0%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40%{
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  50%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  60%{
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  80%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/*************** responsive ****************/
+@media only screen and (max-width:738px){
+	.title{font-size: 30px;}
+	.belt-selector-row span{
+		min-width: 0px;
+		height: 16px;
+		margin: 4px;
+	}
+	.belt-selector-row span h3{	font-size: 14px;}
+
+	.start-stop-wrap{ font-size: 16px;}
+	.pause-btn{font-size: 15px;}
+	.velocity-wrap span p{ font-size: 10px; }
+
+	.tecnica-text{
+		font-size: 60px;
+	}
+}
